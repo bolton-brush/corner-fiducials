@@ -1,0 +1,284 @@
+{
+  "source": {
+    "title": "Scaled Measurements from the AAOF Legacy Collection Images",
+    "version": "1.9",
+    "date": "2022-02-28",
+    "sha256": "f9ea054283a0f6ea17fed1bd2185c7af0c1991898ce7a579c726c484ca15ea8c",
+    "page_numbers": "1-based PDF pages, including cover",
+    "coordinates": "A,B,C,D; original PDF millimetre x/y values; Cartesian y-up"
+  },
+  "templates": [
+    {
+      "id": "iowa",
+      "collection": "Iowa Growth",
+      "coordinates_mm": {
+        "A": [
+          5.6,
+          11.9
+        ],
+        "B": [
+          4.9,
+          233.7
+        ],
+        "C": [
+          280.2,
+          234.5
+        ],
+        "D": [
+          280.0,
+          13.0
+        ]
+      },
+      "pdf_pages": [
+        4
+      ],
+      "nominal_dpi": 300,
+      "notes": "Full-size image scale does not establish the pixel scale of arbitrary resized input."
+    },
+    {
+      "id": "mathews",
+      "collection": "Mathews Growth",
+      "coordinates_mm": {
+        "A": [
+          -0.4,
+          -152.6
+        ],
+        "B": [
+          0.0,
+          0.0
+        ],
+        "C": [
+          178.2,
+          0.0
+        ],
+        "D": [
+          177.7,
+          -159.4
+        ]
+      },
+      "pdf_pages": [
+        4
+      ],
+      "nominal_dpi": 300,
+      "notes": "The PDF notes an incorrectly identified website image for Subject 001 Image 10."
+    },
+    {
+      "id": "forsyth_twin_original",
+      "collection": "Forsyth Twin (original pinpoint films)",
+      "coordinates_mm": {
+        "A": [
+          0.1,
+          -152.6
+        ],
+        "B": [
+          0.0,
+          0.0
+        ],
+        "C": [
+          177.0,
+          0.0
+        ],
+        "D": [
+          176.7,
+          -159.8
+        ]
+      },
+      "pdf_pages": [
+        5
+      ],
+      "nominal_dpi": 600,
+      "notes": "Applies to original Subjects 03-11 through 40-12. The 90 subjects added in 2018 have inconsistent fiducials and no fixed coordinate table is provided."
+    },
+    {
+      "id": "fels",
+      "collection": "Fels Longitudinal",
+      "coordinates_mm": {
+        "A": [
+          0.1,
+          -152.6
+        ],
+        "B": [
+          0.0,
+          0.0
+        ],
+        "C": [
+          177.0,
+          0.0
+        ],
+        "D": [
+          176.7,
+          -159.8
+        ]
+      },
+      "pdf_pages": [
+        5
+      ],
+      "nominal_dpi": 300,
+      "notes": "Geometrically identical to the documented original Forsyth and ordinary Oregon pattern."
+    },
+    {
+      "id": "denver",
+      "collection": "Denver Growth",
+      "coordinates_mm": {
+        "A": [
+          50.6,
+          15.9
+        ],
+        "B": [
+          52.2,
+          168.4
+        ],
+        "C": [
+          229.8,
+          166.8
+        ],
+        "D": [
+          228.4,
+          7.3
+        ]
+      },
+      "pdf_pages": [
+        5,
+        6
+      ],
+      "nominal_dpi": 300,
+      "notes": "Point D continues at the top of the next PDF page. Some full-size images lack visible fiducials."
+    },
+    {
+      "id": "michigan",
+      "collection": "Michigan Growth",
+      "coordinates_mm": {
+        "A": [
+          38.9,
+          23.1
+        ],
+        "B": [
+          38.4,
+          175.8
+        ],
+        "C": [
+          215.6,
+          176.1
+        ],
+        "D": [
+          215.4,
+          16.3
+        ]
+      },
+      "pdf_pages": [
+        6
+      ],
+      "nominal_dpi": 300,
+      "notes": "The PDF specifies the outer four corners when five fiducials per side are present. Interior competing sets must not be silently promoted."
+    },
+    {
+      "id": "oregon_optical",
+      "collection": "Oregon Growth (early optical pattern)",
+      "coordinates_mm": {
+        "A": [
+          -2.8,
+          -132.8
+        ],
+        "B": [
+          0.0,
+          0.0
+        ],
+        "C": [
+          266.0,
+          0.0
+        ],
+        "D": [
+          262.9,
+          -139.9
+        ]
+      },
+      "pdf_pages": [
+        6
+      ],
+      "nominal_dpi": 300,
+      "notes": "Optical circle/cross pattern for Subjects 015,058,133,134,183,240,242,277,295. Appearance support is experimental."
+    },
+    {
+      "id": "oregon",
+      "collection": "Oregon Growth (remaining subjects)",
+      "coordinates_mm": {
+        "A": [
+          0.1,
+          -152.6
+        ],
+        "B": [
+          0.0,
+          0.0
+        ],
+        "C": [
+          177.0,
+          0.0
+        ],
+        "D": [
+          176.7,
+          -159.8
+        ]
+      },
+      "pdf_pages": [
+        6
+      ],
+      "nominal_dpi": 300,
+      "notes": "Not the early optical pattern."
+    },
+    {
+      "id": "burlington",
+      "collection": "Burlington Growth",
+      "coordinates_mm": {
+        "A": [
+          11.9,
+          4.3
+        ],
+        "B": [
+          11.1,
+          279.6
+        ],
+        "C": [
+          233.7,
+          279.9
+        ],
+        "D": [
+          234.9,
+          4.5
+        ]
+      },
+      "pdf_pages": [
+        7
+      ],
+      "nominal_dpi": 300,
+      "notes": "Earlier distributed images could be 223 dpi; PDF versions before 1.2 had incorrect fiducial values."
+    },
+    {
+      "id": "bolton_brush",
+      "collection": "Bolton-Brush Growth",
+      "coordinates_mm": {
+        "A": [
+          0.3,
+          -152.5
+        ],
+        "B": [
+          0.0,
+          0.0
+        ],
+        "C": [
+          177.1,
+          0.0
+        ],
+        "D": [
+          176.9,
+          -159.6
+        ]
+      },
+      "pdf_pages": [
+        7,
+        8
+      ],
+      "nominal_dpi": 300,
+      "notes": "The punch template can be reversed. Right-side distances near 159-160 vs 152-153 mm refer to the documented standard/reversed orientations, not an arbitrary screen rotation."
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "corner-fiducials"
+version = "0.1.0a1"
+description = "Deterministic, pixel-array AAOF corner fiducial hypotheses with explicit ambiguity"
+readme = "README.md"
+requires-python = ">=3.9"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{name = "bolton-brush contributors"}]
+dependencies = ["numpy>=1.24", "opencv-python-headless>=4.8", "scipy>=1.10"]
+classifiers = ["Development Status :: 3 - Alpha", "Programming Language :: Python :: 3", "Topic :: Scientific/Engineering :: Image Processing"]
+
+[project.optional-dependencies]
+dev = ["pytest>=7", "build>=1", "twine>=5", "invoke>=2", "wheel"]
+examples = ["Pillow>=10"]
+
+[project.urls]
+Repository = "https://github.com/bolton-brush/corner-fiducials"
+Issues = "https://github.com/bolton-brush/corner-fiducials/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"corner_fiducials.data" = ["templates.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
