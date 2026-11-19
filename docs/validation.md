@@ -35,7 +35,7 @@ held-out improvement claim. An out-of-pattern/mismatched-label case remains unre
   array-detection smoke test passed locally.
 - The locked Nix development shell was entered and all 132 tests passed on its Python 3.14
   interpreter. This is an executed check, not only a supplied lock/configuration file.
-- GitHub CI is configured. A workflow file is not itself evidence of a successful remote run.
+- Remote CI outcomes are tracked in the [workflow history](https://github.com/bolton-brush/corner-fiducials/actions/workflows/tests.yml). The initial run failed while provisioning Python 3.9 on Ubuntu 26.04, before algorithm tests executed. CI now pins Ubuntu 24.04 and runs matrix jobs independently; configuration alone is not evidence that a remote run passed.
 - TestPyPI/PyPI targets are supplied; no distribution upload is performed merely by committing.
 
 ## Not independently validated

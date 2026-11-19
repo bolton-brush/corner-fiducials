@@ -34,7 +34,7 @@ accuracy release. User acceptance testing of these new capabilities has not yet 
 - Independent real-image accuracy for all documented template families and physical names.
 - Real optical circle/cross localization and exhaustive true multi-punch grouping.
 - Calibrated confidence, false-positive/missing-set rates and user acceptance.
-- Remote CI execution: workflow configuration is supplied, not proof of a passed run.
+- Remote CI results are tracked in GitHub Actions. The initial run failed during Python 3.9 provisioning on Ubuntu 26.04 before tests executed; the CI follow-up pins Ubuntu 24.04 and disables matrix fail-fast.
 - PyPI/TestPyPI upload: targets/workflow are supplied; no upload has been performed.
 
 Known limits and the unresolved development case are retained in [validation.md](validation.md)

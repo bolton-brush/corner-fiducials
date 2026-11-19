@@ -27,3 +27,5 @@ fixtures, old human annotations or source-inventory manifests. Real-image valida
 in an ignored local directory and must report its cohort, label independence, thresholds,
 per-point errors, full-set error rate, missing detections and ambiguous/mixed-set behavior.
 A previously inspected or tuned cohort is development evidence, not an independent test.
+
+CI pins Ubuntu 24.04, whose official setup-python manifest provides all matrix versions, rather than following the moving ubuntu-latest image. Matrix fail-fast is disabled so one environment cannot cancel the others. Checkout/setup-python use Node 24 action releases. The initial remote run failed during Python 3.9 provisioning on Ubuntu 26.04, before any package tests ran; see the [workflow history](https://github.com/bolton-brush/corner-fiducials/actions/workflows/tests.yml) for subsequent executed results.
