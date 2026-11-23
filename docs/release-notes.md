@@ -1,3 +1,12 @@
+# 0.1.0a2 — advisory joint review priorities
+
+- Preserve complete bounded hypothesis output and add preferred/alternative/fallback tiers.
+- Jointly prefer compatible sets over conflicting cross-combinations; allow no preferred set.
+- Expose zero-based preferred indices, reasons and configurable uncalibrated cutoffs.
+- Keep all coordinates, source arrays, uncertainty, naming and review requirements unchanged.
+- 150 local synthetic/API tests passed; a small manually labelled development pilot was rerun.
+- This is development evidence, not independent acceptance, calibrated confidence or publication.
+
 # Initial implementation: 0.1.0a1
 
 This is an experimental algorithm/library implementation for issue #1, not a validated

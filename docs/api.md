@@ -70,3 +70,25 @@ independently calibrated acceptance limits. All can be inspected in `DetectorCon
 Smaller/numerous sets may need explicit limits/span changes; truncation must be honored.
 
 `to_dict()` includes `named_points` (null if unresolved) and `template_type` (null for multiple IDs) alongside the complete tentative hypotheses. A 24-window geometry-guided local search can recover weak spots from original pixels using three observed anchors; `guided_windows=0` disables it. Its bounds and use are reported in warnings. A predicted location without pixel evidence is never inserted as an observed point.
+
+## Joint review preference (0.1.0a2)
+
+`result.preferred_set_indices` contains zero-based indices into the unchanged full `sets`
+list. `to_dict()` includes it. Each set adds `review_priority` (`preferred`, `alternative`,
+`fallback`) and `preference_reason`. These are workflow suggestions, not calibrated confidence,
+true group counts, accepted detections, or physical-name certification. `requires_review`
+remains true even for preferred entries. All coordinate/name alternatives remain accessible.
+
+`preferred_min_score=0.90` and `preferred_relative_score=0.90` are configurable engineering
+cutoffs on the existing heuristic score. Eligible scores must exceed the larger of the
+absolute cutoff and relative cutoff times the best returned score; ordinary geometry and
+non-weak spot evidence are also required. A maximum-weight nonconflicting collection is
+suggested using excess score above that cutoff. No eligible entries means an empty preference
+list, not an empty detection result. The explicit `no_preferred_set...` warning signals this.
+
+At most 20 eligible sets use exact optimization; larger lists use deterministic greedy
+preference with `joint_preference_optimization_limited`. This bound does not discard sets.
+Sets sharing observed candidate indices are considered incompatible only for this suggestion;
+real groups that share a hole can remain among alternatives and must be inspected manually.
+Spatially near but different candidate indices are not certified duplicates. All existing
+search, output, conflict, template and A/B/C/D ambiguity flags still apply.

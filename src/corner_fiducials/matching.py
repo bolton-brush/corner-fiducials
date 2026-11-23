@@ -14,6 +14,7 @@ from .types import (
     DetectionResult,
 )
 from .templates import get_templates
+from .prioritization import prioritize_sets
 
 
 def match_candidates(candidates, image_shape, *, templates=None, config=None):
@@ -236,6 +237,8 @@ def match_candidates(candidates, image_shape, *, templates=None, config=None):
                 warnings=tuple(notes),
             )
         )
+    final, preference_notes = prioritize_sets(final, cfg)
+    warnings.extend(preference_notes)
     if len(final) > 1:
         warnings.append("multiple_punch_sets_or_competing_explanations_not_confirmed")
     if truncated:

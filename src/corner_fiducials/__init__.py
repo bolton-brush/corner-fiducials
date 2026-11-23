@@ -14,7 +14,7 @@ from .candidates import find_candidates
 from .matching import match_candidates
 from .guidance import augment_candidates
 
-__version__ = "0.1.0a1"
+__version__ = "0.1.0a2"
 
 
 def detect(image, *, templates=None, config=None):

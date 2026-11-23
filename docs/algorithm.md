@@ -58,3 +58,18 @@ Perfect synthetic matching does not demonstrate reliable detection in radiograph
 anatomy, rulers, text, folds, motion artifacts or nonstandard punching devices.
 
 Determinism refers to fixed pixels, configuration and dependency versions. Numerical rounding, local-maximum ties and rankings can differ between dependency versions. Record versions for comparisons; flake.lock pins the Nix development input.
+
+## Joint review prioritization
+
+After matching and bounded output, construct a conflict graph from shared observed spot
+indices. Candidate groups above configurable absolute/relative heuristic cutoffs and ordinary
+geometry bounds receive utility equal to score minus cutoff. Choose a maximum-utility
+nonconflicting subset, so a bridge assembled from two actual groups can lose to two compatible
+explanations. For more than 20 eligible groups, use bounded deterministic greedy preference
+and report the optimization limit. Weak, overlapping and lower-ranked hypotheses are retained
+and classified as alternatives/fallbacks; no source image is selected or excluded automatically.
+
+These conservative 0.90 defaults were checked on a small inspected development pilot. They
+are not calibrated thresholds or an independent performance result. Strong distractors can
+still receive preference, and weak true sets can receive only fallback status. This step does
+not refine coordinates, identify unknown template families, or resolve ambiguous A/B/C/D.

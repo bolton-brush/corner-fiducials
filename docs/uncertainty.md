@@ -24,3 +24,13 @@ All alpha results set `requires_review=True`. Scores are deterministic ranking v
 calibrated probabilities or a guarantee that the highest-ranked hypothesis is correct.
 There are no independent human A/B/C/D orientation labels for every supported collection.
 A provisional pixels/mm fit does not independently establish anatomical scale.
+
+## Known discovery/interpretation coupling
+
+The nearest-neighbor discovery bound can omit compatible template explanations for points
+that are already present. More distractors can change which compatible family explanations
+survive for the same four spots. Development diagnostics recovered omitted families by
+refitting the isolated four points or increasing the neighborhood from two to four.
+A complete post-discovery enumeration of template/assignment/reflection explanations is
+future work. A singleton template type under bounded search is not certified provenance;
+inspect search-limit and unresolved-name flags, and retain manual review.

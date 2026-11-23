@@ -7,7 +7,7 @@ There is no neural model, random sampling, private training data, image-file API
 in the library. Results preserve uncertain names, indistinguishable templates and competing
 punch groups instead of treating every match as a confirmed detection.
 
-**Status: experimental alpha (`0.1.0a1`).** Implementation and synthetic tests are available.
+**Status: experimental alpha (`0.1.0a2`).** Implementation and synthetic tests are available. A small manually reviewed development pilot has informed review prioritization; it is not independent accuracy evidence.
 All new template/appearance/multiple-group behavior is not yet independently validated on
 real images. Do not transfer an earlier version's retrospective accuracy to this library.
 See [validation status](docs/validation.md) and [known limitations](docs/uncertainty.md).

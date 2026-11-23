@@ -51,6 +51,9 @@ class FiducialSet:
     warnings: tuple[str, ...] = ()
     requires_review: bool = True
 
+    review_priority: str = "fallback"
+    preference_reason: str = "not_prioritized"
+
     @property
     def template_type(self) -> Optional[str]:
         return self.template_types[0] if len(self.template_types) == 1 else None
@@ -72,8 +75,15 @@ class DetectionResult:
     experimental: bool = True
     truncated: bool = False
 
+    @property
+    def preferred_set_indices(self) -> tuple[int, ...]:
+        return tuple(
+            i for i, s in enumerate(self.sets) if s.review_priority == "preferred"
+        )
+
     def to_dict(self) -> dict[str, Any]:
         result = asdict(self)
+        result["preferred_set_indices"] = list(self.preferred_set_indices)
         for record, group in zip(result["sets"], self.sets):
             record["named_points"] = (
                 {k: asdict(v) for k, v in group.named_points.items()}
@@ -97,8 +107,18 @@ class DetectorConfig:
     label_noise_pixels: float = 1.5
     max_hypotheses: int = 4096
     guided_windows: int = 24
+    preferred_min_score: float = 0.90
+    preferred_relative_score: float = 0.90
 
     def __post_init__(self):
+        for name in ("preferred_min_score", "preferred_relative_score"):
+            value = getattr(self, name)
+            if (
+                isinstance(value, bool)
+                or not isinstance(value, (int, float))
+                or not 0 <= value <= 1
+            ):
+                raise ValueError(name + " must be a finite number in [0,1]")
         for name in ("max_candidates", "max_sets", "neighbors", "max_hypotheses"):
             value = getattr(self, name)
             if type(value) is not int or value <= 0:
