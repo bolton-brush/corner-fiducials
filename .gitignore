@@ -1,0 +1,24 @@
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+*.egg-info/
+build/
+dist/
+result/
+result-*/
+private-validation/
+.env
+.env.*
+# Never check in private images, annotations, credentials or local source manifests.
+*.tif
+*.tiff
+*.png
+*.jpg
+*.jpeg
+*.bmp
+*.npy
+*.npz
+*.sqlite*
+annotations*.json
+annotations*.csv
